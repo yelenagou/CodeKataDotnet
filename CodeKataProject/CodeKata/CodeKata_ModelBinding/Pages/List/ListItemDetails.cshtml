@@ -1,0 +1,11 @@
+﻿@page "{listItemId:int}"
+@model CodeKata_ModelBinding.Pages.List.ListItemDetailsModel
+@{
+    ViewData["Title"] = "ListItemDetails";
+}
+
+<h1>@Model.ListItem.Name</h1>
+<div>Id is @Model.ListItem.Id</div>
+<div>Location is @Model.ListItem.Location</div>
+<div>Cuising type is @Model.ListItem.ListItemType</div>
+<a asp-page="./ListItems" class="btn btn-dark">Go To List</a>

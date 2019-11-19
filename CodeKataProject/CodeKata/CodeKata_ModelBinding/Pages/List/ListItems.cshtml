@@ -1,0 +1,44 @@
+﻿@page
+@model CodeKata_ModelBinding.Pages.List.ListItemsModel
+@{
+    ViewData["Title"] = "ListItems";
+}
+
+<h1>ListItems</h1>
+<p class="alert-heading">@Model.Message</p>
+<form  method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm"/>
+            <span class="btn-group-sm">
+                <button class="btn btn-dark">search</button>
+            </span>
+          
+        </div>
+    </div>
+</form>
+<table class="table">
+    @foreach (var listItem in Model.ListOfItems)
+    {
+    <tr>
+        <td>@listItem.Name</td>
+        <td>@listItem.Location</td>
+        <td>@listItem.ListItemType</td>
+        <td>
+            <a class="btn btn-dark"
+               asp-page="./ListItemDetails"
+               asp-route-listItemId="@listItem.Id">
+                Details
+            </a>
+        </td>
+        <td>
+            <a class="btn btn-dark"
+               asp-page="./ListItemEdit"
+               asp-route-listItemId="@listItem.Id">
+                Edit
+            </a>
+        </td>
+    </tr>
+    }
+</table>
+

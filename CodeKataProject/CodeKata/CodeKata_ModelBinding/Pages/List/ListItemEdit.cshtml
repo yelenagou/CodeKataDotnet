@@ -1,0 +1,31 @@
+﻿@page "{listItemId:int}"
+@model CodeKata_ModelBinding.Pages.List.ListItemEditModel
+@{
+    ViewData["Title"] = "ListItemEdit";
+}
+
+<h1>Editing @Model.ListItem.Name</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="ListItem.Id" />
+    <div class="form-group">
+        <label asp-for="ListItem.Name"></label>
+        <input asp-for="ListItem.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="ListItem.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ListItem.Location"></label>
+        <input asp-for="ListItem.Location" class="form-control" />
+        <span class="text-danger" asp-validation-for="ListItem.Location"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="ListItem.ListItemType"></label>
+        <select class="form-control" asp-for="ListItem.ListItemType" asp-items="Model.ListItemTypes">
+            
+        </select>
+     
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>
