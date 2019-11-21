@@ -1,0 +1,33 @@
+﻿@page
+@model CodeKata_OnPost.Pages.Storage.HomeModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Home</h1>
+
+<table class="table">
+    @foreach (var containerItem in Model.StorageInfo)
+    {
+        <tr>
+            <td>@containerItem.ContainerName</td>
+            <td>@containerItem.BlobName</td>
+            <td>@containerItem.FileType</td>
+            <td>
+                <a class="btn btn-dark"
+                   asp-page="Detail"
+                   asp-route-containerId="@containerItem.Id">
+                    Details
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-dark"
+                   asp-page="Update"
+                   asp-route-containerId="@containerItem.Id">
+                    Edit
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+

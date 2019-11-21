@@ -9,13 +9,18 @@ namespace List.Data
     public interface IListItemData
     {
         IEnumerable<ListItem> GetListItems(string listItem);
+        IEnumerable<StorageInfo> GetStorageInfo(string containerName);
         ListItem GetById(int id);
         ListItem Update(ListItem updatedListItem);
         int Commit();
+        StorageInfo GetContainerById(int id);
+        StorageInfo UpdateContainers(StorageInfo updateStorageInfo);
     }
     public class InMemoryListData : IListItemData
     {
         readonly List<ListItem> listItems;
+        readonly List<StorageInfo> storageItems;
+   
         public InMemoryListData()
         {
             listItems = new List<ListItem>()
@@ -23,6 +28,14 @@ namespace List.Data
                  new ListItem { Id = 1, Name = "Scott's Pizza", Location="Maryland", ListItemType=ListItemType.Italian},
                 new ListItem { Id = 2, Name = "Cinnamon Club", Location="London", ListItemType=ListItemType.Italian},
                 new ListItem { Id = 3, Name = "La Costa", Location = "California", ListItemType=ListItemType.Mexican}
+            };
+
+            storageItems = new List<StorageInfo>()
+            {
+                new StorageInfo { Id = 1, ContainerName="Container One", BlobName = "Blob One", FileType = FileType.text},
+                new StorageInfo { Id = 2, ContainerName="Container One", BlobName = "Blob Two", FileType = FileType.excel},
+                new StorageInfo { Id = 3, ContainerName="Container One", BlobName = "Blob Three", FileType = FileType.other}
+
             };
         }
         public ListItem GetById(int id)
@@ -58,6 +71,44 @@ namespace List.Data
         {
             return 0;
         }
-      
+        /// <summary>
+        /// Get Storage info by container name
+        /// </summary>
+        /// <param name="containerName"></param>
+        /// <returns></returns>
+        public IEnumerable<StorageInfo> GetStorageInfo(string containerName = null)
+        {
+            return from s in storageItems
+                   where string.IsNullOrEmpty(containerName) || s.BlobName.StartsWith(containerName)
+                   orderby s.ContainerName
+                   select s;
+        }
+        /// <summary>
+        /// Get Container by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Container Information</returns>
+        public StorageInfo GetContainerById(int id)
+        {
+           return storageItems.SingleOrDefault(r => r.Id == id);
+        }
+        /// <summary>
+        /// update storage info
+        /// </summary>
+        /// <param name="updateStorageInfo"></param>
+        /// <returns>returns update storage info</returns>
+        public StorageInfo UpdateContainers(StorageInfo updateStorageInfo)
+        {
+            var listItem = storageItems.SingleOrDefault(r => r.Id == updateStorageInfo.Id);
+            if (listItem != null)
+            {
+                listItem.ContainerName = updateStorageInfo.ContainerName;
+                listItem.BlobName = updateStorageInfo.BlobName;
+                listItem.FileType = updateStorageInfo.FileType;
+            }
+
+            return listItem;
+
+        }
     }
 }
