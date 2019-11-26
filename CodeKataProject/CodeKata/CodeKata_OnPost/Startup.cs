@@ -25,7 +25,7 @@ namespace CodeKata_OnPost
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddSingleton<IListItemData, InMemoryListData>();
+            services.AddScoped<IListItemData, SqlListData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -8,30 +8,31 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace CodeKata_ModelBinding.Pages.List
+namespace CodeKata_ModelBinding.Pages.Cases
 {
-    public class ListItemDetailsModel : PageModel
+    public class UpdateModel : PageModel
     {
         private readonly IListItemData listItemData;
         private readonly IHtmlHelper htmlHelper;
+        [BindProperty]
+        public ListItem ListItem { get; set; }  
+        public IEnumerable<SelectListItem> ListItemTypes { get; set; }
 
-        public ListItemDetailsModel(IListItemData listItemData, IHtmlHelper htmlHelper)
+        public UpdateModel(IListItemData listItemData, IHtmlHelper htmlHelper)
         {
             this.listItemData = listItemData;
             this.htmlHelper = htmlHelper;
         }
-        public ListItem ListItem { get; set; }
-        public IEnumerable<SelectListItem> ListItemTypes { get; set; }
         public IActionResult OnGet(int listItemId)
         {
+            ListItemTypes = htmlHelper.GetEnumSelectList<ListItemType>();
             ListItem = listItemData.GetById(listItemId);
-           
-            if(ListItem == null)
+            if(ListItemTypes == null)
             {
                 return RedirectToPage("./NotFound");
             }
+
             return Page();
-            //ListItem.Id = listItemId;
         }
     }
 }

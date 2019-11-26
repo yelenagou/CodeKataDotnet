@@ -1,0 +1,31 @@
+﻿@page
+@model CodeKata_ModelBinding.Pages.Cases.ListModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+    <table class="table">
+        @foreach (var caseItem in Model.ListItems)
+        {
+            <tr>
+                <td>@caseItem.Name</td>
+                <td>@caseItem.Location</td>
+                <td>@caseItem.ListItemType</td>
+                <td>
+                    <a class="btn btn-dark"
+                       asp-page="Detail"
+                       asp-route-listItemId="@caseItem.Id">
+                        Details
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-dark"
+                       asp-page="Update"
+                       asp-route-listItemId="@caseItem.Id">
+                       Update
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+<h1>Number of Items are @Model.ListItems.Count()</h1>
+

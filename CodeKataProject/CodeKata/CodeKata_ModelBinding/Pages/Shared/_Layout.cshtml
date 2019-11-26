@@ -25,7 +25,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/List/ListItems">List Items</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Cases/List">Cases</a>
                         </li>
                     </ul>
                 </div>
@@ -39,6 +39,7 @@
     </div>
 
     <footer class="border-top footer text-muted">
+        @RenderSection("footer", required: false)
         <div class="container">
             &copy; 2019 - CodeKata_ModelBinding - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>

@@ -1,11 +1,7 @@
 ﻿@page "{listItemId:int}"
-@model CodeKata_ModelBinding.Pages.List.ListItemEditModel
-@{
-    ViewData["Title"] = "ListItemEdit";
-}
+@model CodeKata_ModelBinding.Pages.Cases.UpdateModel
 
-<h1>Editing @Model.ListItem.Name</h1>
-
+<h2>Editing Container: @Model.ListItem.Name</h2>
 <form method="post">
     <input type="hidden" asp-for="ListItem.Id" />
     <div class="form-group">
@@ -22,10 +18,8 @@
     <div class="form-group">
         <label asp-for="ListItem.ListItemType"></label>
         <select class="form-control" asp-for="ListItem.ListItemType" asp-items="Model.ListItemTypes">
-            
         </select>
-     
+
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
-
 </form>

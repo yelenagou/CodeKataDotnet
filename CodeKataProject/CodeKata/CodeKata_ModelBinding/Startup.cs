@@ -6,6 +6,7 @@ using List.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,7 +26,13 @@ namespace CodeKata_ModelBinding
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddSingleton<IListItemData, InMemoryListData>();
+            services.AddScoped<IListItemData, SqlListData>();
+            services.AddDbContextPool<ListItemsDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("ListItemsDb"));
+            }
+           );
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
