@@ -34,5 +34,16 @@ namespace CodeKata_ModelBinding.Pages.Cases
 
             return Page();
         }
+        public IActionResult OnPost()
+        {
+            ListItemTypes = htmlHelper.GetEnumSelectList<ListItemType>();
+            if (ModelState.IsValid)
+            {
+                ListItem = listItemData.Update(ListItem);
+                listItemData.Commit();
+                return RedirectToPage("./Detail", new { containerId = ListItem.Id });
+            }
+            return Page();
+        }
     }
 }

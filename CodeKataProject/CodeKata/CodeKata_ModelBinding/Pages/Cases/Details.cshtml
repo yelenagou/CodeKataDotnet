@@ -1,0 +1,20 @@
+﻿@page "{listItemId:int}" 
+@model CodeKata_ModelBinding.Pages.Cases.DetailsModel
+
+<section>
+    <article>
+        <h2>Detail for @Model.ListItem.Name</h2>
+        <div class="row">
+            <div class="col col-sm-4">
+                Location: @Model.ListItem.Location
+            </div>
+            <div class="col col-sm-4">
+                Name: @Model.ListItem.Name
+            </div>
+            <div class="col col-sm-4">
+                Name: @Model.ListItem.ListItemType
+            </div>
+        </div>
+
+    </article>
+</section>
