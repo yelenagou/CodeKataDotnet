@@ -41,7 +41,7 @@ namespace CodeKata_ModelBinding.Pages.Cases
             {
                 ListItem = listItemData.Update(ListItem);
                 listItemData.Commit();
-                return RedirectToPage("./Detail", new { containerId = ListItem.Id });
+                return RedirectToPage(".Detail", new { containerId = ListItem.Id });
             }
             return Page();
         }
