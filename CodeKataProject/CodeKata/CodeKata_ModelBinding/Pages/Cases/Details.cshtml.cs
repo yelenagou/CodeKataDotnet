@@ -12,6 +12,8 @@ namespace CodeKata_ModelBinding.Pages.Cases
     public class DetailsModel : PageModel
     {
         private readonly IListItemData listItemData;
+        [TempData]
+        public string Message { get; set; }
         public ListItem ListItem { get; set; }
 
         public DetailsModel(IListItemData listItemData)

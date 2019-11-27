@@ -1,6 +1,10 @@
 ﻿@page "{listItemId:int}" 
 @model CodeKata_ModelBinding.Pages.Cases.DetailsModel
-    <header>@TempData["Message"]</header>
+@if(Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+    
 
 <section>
     <article>

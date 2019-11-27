@@ -23,10 +23,18 @@ namespace CodeKata_ModelBinding.Pages.Cases
             this.listItemData = listItemData;
             this.htmlHelper = htmlHelper;
         }
-        public IActionResult OnGet(int listItemId)
+        public IActionResult OnGet(int? listItemId)
         {
             ListItemTypes = htmlHelper.GetEnumSelectList<ListItemType>();
-            ListItem = listItemData.GetById(listItemId);
+            if (listItemId.HasValue)
+            {
+                ListItem = listItemData.GetById(listItemId.Value);
+            }
+            else
+            {
+                ListItem = new ListItem();
+
+            }
             if(ListItemTypes == null)
             {
                 return RedirectToPage("./NotFound");
@@ -36,14 +44,25 @@ namespace CodeKata_ModelBinding.Pages.Cases
         }
         public IActionResult OnPost()
         {
-            ListItemTypes = htmlHelper.GetEnumSelectList<ListItemType>();
-            if (ModelState.IsValid)
+           
+            if (!ModelState.IsValid)
+            {
+                ListItemTypes = htmlHelper.GetEnumSelectList<ListItemType>();
+                return Page();
+                
+            }
+            if(ListItem.Id > 0)
             {
                 ListItem = listItemData.Update(ListItem);
-                listItemData.Commit();
-                return RedirectToPage(".Detail", new { containerId = ListItem.Id });
             }
-            return Page();
+           else
+            {
+                listItemData.Add(ListItem);
+            }
+            listItemData.Commit();
+            TempData["Message"] = $"List Itemis saved";
+            return RedirectToPage("./Details", new { listItemId = ListItem.Id });
+
         }
     }
 }
