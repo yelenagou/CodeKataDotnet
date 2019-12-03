@@ -45,6 +45,11 @@ namespace List.Data
             throw new System.NotImplementedException();
         }
 
+        public int GetCountOfItems()
+        {
+            return db.ListItems.Count();
+        }
+
         public IEnumerable<ListItem> GetListItems(string listItemName)
         {
             if (listItemName != null)

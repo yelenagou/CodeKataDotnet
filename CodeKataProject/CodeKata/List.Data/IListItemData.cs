@@ -15,5 +15,6 @@ namespace List.Data
         int Commit();
         StorageInfo GetContainerById(int id);
         StorageInfo UpdateContainers(StorageInfo updateStorageInfo);
+        int GetCountOfItems();
     }
 }

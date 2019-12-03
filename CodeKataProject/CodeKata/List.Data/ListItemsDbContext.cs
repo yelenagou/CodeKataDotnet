@@ -13,5 +13,6 @@ namespace List.Data
 
         }
         public DbSet<ListItem>  ListItems { get; set; }
+        public DbSet<StorageInfo> StorageInfo { get; set; }
     }
 }

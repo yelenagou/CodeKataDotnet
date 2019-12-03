@@ -121,5 +121,10 @@ namespace List.Data
             }
             return listItem;
         }
+
+        public int GetCountOfItems()
+        {
+            return listItems.Count();
+        }
     }
 }

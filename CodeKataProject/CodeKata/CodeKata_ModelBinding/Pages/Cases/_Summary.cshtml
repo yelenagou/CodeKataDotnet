@@ -1,2 +1,41 @@
 ﻿@using List.Core
 @model ListItem
+
+
+    <td>
+        <div class="card">
+            <div class="card-header">
+                <h3>@Model.Name</h3>
+            </div>
+            <div class="card-body">
+                <span>Location: @Model.Location</span>
+                <span>Location Type: @Model.Location</span>
+
+
+                <div class="card-footer">
+                    <a class="btn btn-dark"
+                       asp-page="Details"
+                       asp-route-listItemId="@Model.Id">
+                        Details
+                    </a>
+
+
+                    <a class="btn btn-dark"
+                       asp-page="Update"
+                       asp-route-listItemId="@Model.Id">
+                        Update
+                    </a>
+
+
+                    <a class="btn btn-dark"
+                       asp-page="Delete"
+                       asp-route-listItemId="@Model.Id">
+                        Delete
+                    </a>
+                </div>
+               
+
+            </div>
+
+        </div>
+    </td>

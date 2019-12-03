@@ -1,10 +1,17 @@
 ﻿@page
 @model CodeKata_ModelBinding.Pages.Cases.ListModel
 
-    <table class="table">
-        @foreach (var caseItem in Model.ListItems)
-        {
-        <tr>
+<table class="table">
+    @foreach (var caseItem in Model.ListItems)
+    {
+       <tr> <partial name="_Summary" model="caseItem" /></tr>
+        @*<tr>
+            <td><button type="button" class="btn btn-primary bmd-btn-fab">
+    <i class="material-icons">grade</i>
+                
+        </button>
+                <i class="ion-md-fastforward"></i>
+                <i class="fas fa-battery-half"></i></td>
             <td>@caseItem.Name</td>
             <td>@caseItem.Location</td>
             <td>@caseItem.ListItemType</td>
@@ -29,9 +36,11 @@
                     Delete
                 </a>
             </td>
-        </tr>
-        }
-    </table>
-<h1>Number of Items are @Model.ListItems.Count()</h1>
+        </tr>*@
+    }
+</table>
+<h1>Number of Items are @Model.ListItems.Count()</h1>   
+@*<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>*@
+
 <a asp-page=".\Update" class="btn btn-primary">Add New</a>
 

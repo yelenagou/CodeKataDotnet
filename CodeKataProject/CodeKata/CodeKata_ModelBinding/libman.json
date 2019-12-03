@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "ionicons@4.5.6",
+      "files": [
+        "loader/index.js",
+        "collection/index.js",
+        "css/ionicons-core.css",
+        "ionicons/index.js",
+        "css/ionicons-core.min.css"
+
+      ],
+      "destination": "wwwroot/lib/ionicons"
+
+    },
+    {
+      "library": "bootstrap-material-design@4.0.2",
+      "files": [
+        "bootstrap-material-design.css",
+        "bootstrap-material-design.umd.js"
+      ],
+      "destination": "wwwroot/lib/bootstrap/"
+
+    },
+    {
+      "library": "popper.js@1.15.0",
+      "files": [
+        "popper.js",
+        "popper.min.js"
+      ],
+      "destination": "wwwroot/lib/popper/"
+    },
+    {
+      "library": "font-awesome@5.11.2",
+      "files": [
+        "css/fontawesome.css",
+        "js/fontawesome.js"
+      ],
+      "destination": "wwwroot/lib/fontawesome/"
+    }
+  ]
+}
