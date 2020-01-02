@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeKata_OnPost", "CodeKata
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadExceFileEpp", "ExcelFiles\ReadAndCompare\ReadExceFileEpp\ReadExceFileEpp.csproj", "{F7372761-CBBA-41D4-92A2-F187B495D193}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingSession.Core", "TrainingSession.Core\TrainingSession.Core.csproj", "{0A37D146-0964-4DC8-BA06-283BF9BA7F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainingSession.Core", "TrainingSession.Core\TrainingSession.Core.csproj", "{0A37D146-0964-4DC8-BA06-283BF9BA7F64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlingNulls", "HandlingNulls\HandlingNulls.csproj", "{A9010FD0-9907-4EF5-8111-1C14E3B23029}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{0A37D146-0964-4DC8-BA06-283BF9BA7F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A37D146-0964-4DC8-BA06-283BF9BA7F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A37D146-0964-4DC8-BA06-283BF9BA7F64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9010FD0-9907-4EF5-8111-1C14E3B23029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9010FD0-9907-4EF5-8111-1C14E3B23029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9010FD0-9907-4EF5-8111-1C14E3B23029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9010FD0-9907-4EF5-8111-1C14E3B23029}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
