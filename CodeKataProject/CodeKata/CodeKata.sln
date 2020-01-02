@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainingSession.Core", "Tra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlingNulls", "HandlingNulls\HandlingNulls.csproj", "{A9010FD0-9907-4EF5-8111-1C14E3B23029}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestKataCode", "TestKataCode\TestKataCode.csproj", "{B9C5F120-5A38-41D9-AEF7-16467C6DC99E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{A9010FD0-9907-4EF5-8111-1C14E3B23029}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9010FD0-9907-4EF5-8111-1C14E3B23029}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9010FD0-9907-4EF5-8111-1C14E3B23029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C5F120-5A38-41D9-AEF7-16467C6DC99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C5F120-5A38-41D9-AEF7-16467C6DC99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C5F120-5A38-41D9-AEF7-16467C6DC99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C5F120-5A38-41D9-AEF7-16467C6DC99E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
