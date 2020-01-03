@@ -15,10 +15,14 @@ namespace CS8NullsHandling
             };
             //string messageString = null;
             //null coalescing
+
+            MessagePopulator.Populate(message);
             Console.WriteLine($"From: {message.From ?? "No from"} Message: {message.Text} {message.ToUpperFrom()}");
+            Console.WriteLine($"{message.From!.Length}");
             Console.WriteLine("Press Enter To End");
 
             Console.ReadLine();
+
 
         }
     }
