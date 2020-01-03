@@ -60,5 +60,40 @@ namespace TestKataCode
             string c3 = inputCustomers?[2]?.Name;
 
         }
+        [TestMethod]
+        public void ClientDocuments_AssignedBasedOnType_DocumentsWithChildren()
+        {
+            ClientDocument clientDocument = new ClientDocument(new DocumentsWithChildren())
+            {
+                Name = "Paul"
+            };
+            clientDocument.Assign(1);
+            ClientDocument documentsForNate = new ClientDocument(new DocumentsWithChildren())
+            {
+                Name = "Nate"
+            };
+            documentsForNate.Assign(1);
+        }
+        [TestMethod]
+        public void ClientDocuments_AssignedBasedOnType_DocumentsNoChildren()
+        {
+            
+           
+            ClientDocument documentsForNate = new ClientDocument(new DocumentsWithoutChildren())
+            {
+                Name = "Nate"
+            };
+            documentsForNate.Assign(1);
+        }
+        [TestMethod]
+        public void ClientDocuments_AssignedBasedOnType_NoCustType()
+        {
+            
+            ClientDocument documentsForNate = new ClientDocument(DocumentAssignment.Null)
+            {
+                Name = "Nate"
+            };
+        }
+
     }
 }
