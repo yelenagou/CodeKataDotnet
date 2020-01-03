@@ -17,8 +17,8 @@ namespace TestKataCode
         [TestMethod]
         public void NullableOfType_CheckingDate_DoesNotReturnException()
         {
-            Customer customer = new Customer();
-            NullableOfType.Write(customer);
+            Customer? customer = new Customer(null);
+                
             var dateHasValue = customer.DateBecameCustomer.HasValue;
             Assert.IsTrue(dateHasValue.Equals(false), "Date has value");
 
@@ -26,7 +26,7 @@ namespace TestKataCode
         [TestMethod]
         public void NullableOfType_WriteNumberOfDays_DefaultDays()
         {
-            Customer customer = new Customer();
+            Customer? customer = new Customer(null);
             NullableOfType.WriteDays(customer);
             
 
@@ -34,7 +34,7 @@ namespace TestKataCode
         [TestMethod]
         public void NullableOfT_WriteNumberOfDaysPositive()
         {
-            Customer customer = new Customer();
+            Customer? customer = new Customer(null);
             customer.Name = "";
             customer.NumberOfDays = 42;
             NullableOfType.WriteDays(customer);

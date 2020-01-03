@@ -12,14 +12,19 @@ namespace HandlingNulls
     /// Checks to see if a field has value. A field was identified as nullable
     /// </summary>
     /// <param name="customer">Customer object</param>
-        public static void Write(Customer customer)
+        public static void Write(Customer? customer)
         {
-            var customerInput = new Customer();
-            customerInput = customer;
-
-            if (customerInput.DateBecameCustomer.HasValue)
+            if(customer is null)
             {
-                Out.WriteLine($"The date value is {customerInput.DateBecameCustomer.Value}");
+                Console.WriteLine("No customer specified");
+                return;
+            }
+            Out.WriteLine($"name {customer.Name}");
+
+
+            if (customer.DateBecameCustomer.HasValue)
+            {
+                Out.WriteLine($"The date value is {customer.DateBecameCustomer.Value}");
             }
             else
             {
