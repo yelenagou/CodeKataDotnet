@@ -1,13 +1,18 @@
-﻿using System;
+﻿using System;               
 
 namespace DelegatesAndEvents
 {
-    //public delegate int WorkPerformedHandler(int hours, WorkType workType);
+    //public delegate int Wo    rkPerformedHandler(int hours, WorkType workType);
     public delegate int BizRulesDelegate(int x, int y);
     class Program
     {
         static void Main(string[] args)
         {
+            FunctionExamples.FunctionsWithLambda ff = new FunctionExamples.FunctionsWithLambda(30,40);
+
+            var randInt = ff.GetRangeofIntegers;
+            var rangeOfIntegersSorted = ff.GetRangeOfIntegersAndSort;
+
             BizRulesDelegate addDelegate = (x, y) => x + y;
             BizRulesDelegate multiplyDelegate = (x, y) => x * y;
 

@@ -17,7 +17,7 @@ namespace CodeKata
         public void ReadFile(string filePath)
         {
             using FileStream fs = File.OpenRead(filePath);
-            byte[] b = new byte[1024];
+            byte[] b = new byte[fs.Length];
             UTF8Encoding temp = new UTF8Encoding(true);
             while (fs.Read(b, 0, b.Length) > 0)
             {

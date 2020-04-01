@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FunctionExamples\FunctionExamples.csproj" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.4.0" />
   </ItemGroup>
 
 </Project>

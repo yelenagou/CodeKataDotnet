@@ -19,6 +19,7 @@ namespace CodeKata
             IConfigurationRoot configuration = builder.Build();
 
             Console.WriteLine(configuration.GetConnectionString("Storage"));
+            
         }
     }
 }
